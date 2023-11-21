@@ -58,9 +58,6 @@ function log_ws(msg) {
   log("[WS] " + msg);
 }
 
-function set_version(str) {
-  E("version").innerHTML = str;
-}
 
 var ws = null; // web socket instance
 var ws_callback = log_ws; // message receive callback
@@ -121,8 +118,6 @@ function ws_init() {
     status("connected");
 
     ws_send("close", log_ws, true);
-    ws_send("version", set_version);
-
     ws_connected();
   };
 
